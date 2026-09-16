@@ -16,48 +16,75 @@
         <article class="profile-card">
             <!-- Header section -->
             <header class="card-header">
-                <div class="avatar-badge">
-                    <span class="avatar-initials">SC</span>
+                <div class="avatar-badge pfp-placeholder" title="PFP placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="pfp-icon">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
                 </div>
                 <div class="header-details">
                     <div class="badge-row">
                         <span class="status-pill">
                             <span class="status-dot"></span>
-                            CS Student
+                            Major : Computer Science
                         </span>
                     </div>
-                    <h1 class="profile-name">Shaun Chen</h1>
+                    <h1 class="profile-name">陳宣佑</h1>
                 </div>
             </header>
 
             <div class="divider"></div>
 
-            <!-- About Me Section -->
-            <section class="section about-section">
-                <h2 class="section-title">About Me</h2>
-                <p class="about-text">Hello! I am Shaun Chen.</p>
-            </section>
+            <div class="sections-container">
+                <!-- About Me Section -->
+                <section class="section about-section">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-text">Hello! I am Shaun Chen.</p>
+                </section>
 
-            <!-- Current Time Section -->
-            <section class="section time-section">
-                <div class="time-header">
-                    <h2 class="section-title">Current Time</h2>
-                    <span class="live-indicator">LIVE</span>
-                </div>
-                
-                <div class="time-card">
-                    <div class="clock-icon-wrapper">
-                        <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                <!-- Skills Section -->
+                <section class="section skills-section">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="skills-flex">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Machine Learning</span>
                     </div>
-                    <div class="time-info">
-                        <div class="time-primary" id="time-clock">--:--:--</div>
-                        <div class="time-secondary" id="date-label">Loading date...</div>
+                </section>
+
+                <!-- Projects Section -->
+                <section class="section projects-section">
+                    <h2 class="section-title">Project</h2>
+                    <a href="https://github.com/ShaunChen22/ShaunShell" target="_blank" class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">ShaunShell</h3>
+                            <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                        <p class="project-desc">A basic Unix-like toyshell written in C.</p>
+                    </a>
+                </section>
+
+                <!-- Current Time Section -->
+                <section class="section time-section">
+                    <div class="time-header">
+                        <h2 class="section-title">Current Time</h2>
+                        <span class="live-indicator">LIVE</span>
                     </div>
-                </div>
-            </section>
+                    
+                    <div class="time-card">
+                        <div class="clock-icon-wrapper">
+                            <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="time-info">
+                            <div class="time-primary" id="time-clock">--:--:--</div>
+                            <div class="time-secondary" id="date-label">Loading date...</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </article>
     </main>
 
