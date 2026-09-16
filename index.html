@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaun Chen | Personal Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ambient-glow"></div>
+
+    <main class="page-container">
+        <article class="profile-card">
+            <!-- Header section -->
+            <header class="card-header">
+                <div class="avatar-badge">
+                    <span class="avatar-initials">SC</span>
+                </div>
+                <div class="header-details">
+                    <div class="badge-row">
+                        <span class="status-pill">
+                            <span class="status-dot"></span>
+                            CS Student
+                        </span>
+                    </div>
+                    <h1 class="profile-name">Shaun Chen</h1>
+                </div>
+            </header>
+
+            <div class="divider"></div>
+
+            <!-- About Me Section -->
+            <section class="section about-section">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">Hello! I am Shaun Chen.</p>
+            </section>
+
+            <!-- Current Time Section -->
+            <section class="section time-section">
+                <div class="time-header">
+                    <h2 class="section-title">Current Time</h2>
+                    <span class="live-indicator">LIVE</span>
+                </div>
+                
+                <div class="time-card">
+                    <div class="clock-icon-wrapper">
+                        <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="time-info">
+                        <div class="time-primary" id="time-clock">--:--:--</div>
+                        <div class="time-secondary" id="date-label">Loading date...</div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <script>
+        function updateClock() {
+            const timeElement = document.getElementById('time-clock');
+            const dateElement = document.getElementById('date-label');
+            const now = new Date();
+
+            // Time formatting (HH:MM:SS AM/PM)
+            const timeOptions = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            timeElement.textContent = now.toLocaleTimeString('en-US', timeOptions);
+
+            // Date formatting
+            const dateOptions = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            };
+            dateElement.textContent = now.toLocaleDateString('en-US', dateOptions);
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
