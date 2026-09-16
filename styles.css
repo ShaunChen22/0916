@@ -46,11 +46,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(224, 231, 255, 0.55) 0%, rgba(241, 245, 249, 0) 70%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
+    animation: drift 20s ease-in-out infinite alternate;
 }
 
 .page-container {
@@ -152,9 +155,12 @@ body {
 
 .profile-name {
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.035em;
-    color: var(--text-main);
+    background: linear-gradient(135deg, #0ea5e9, #6366f1, #d946ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1.2;
 }
 
@@ -192,13 +198,25 @@ body {
 
 /* PFP Placeholder */
 .pfp-placeholder {
-    background: #e2e8f0;
+    background: linear-gradient(135deg, #e0e7ff, #fbcfe8);
+    position: relative;
+    overflow: hidden;
+}
+
+.pfp-placeholder::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; right: -50%; bottom: -50%;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.6), rgba(255,255,255,0));
+    transform: rotate(30deg);
 }
 
 .pfp-icon {
     width: 32px;
     height: 32px;
-    color: #94a3b8;
+    color: #8b5cf6;
+    position: relative;
+    z-index: 1;
 }
 
 /* Skills */
@@ -209,13 +227,23 @@ body {
 }
 
 .skill-tag {
-    background: #f1f5f9;
+    background: #f8fafc;
     color: #475569;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
     border: 1px solid rgba(15, 23, 42, 0.05);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background: #ffffff;
+    border-color: #c4b5fd;
+    color: #6d28d9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
 }
 
 /* Project Card */
@@ -230,8 +258,10 @@ body {
 }
 
 .project-card:hover {
-    background: #f1f5f9;
-    border-color: rgba(15, 23, 42, 0.1);
+    background: #ffffff;
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
 }
 
 .project-header {
@@ -362,6 +392,11 @@ body {
         transform: translate(-50%, -50%) scale(2.4);
         opacity: 0;
     }
+}
+
+@keyframes drift {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    100% { transform: translate(-45%, -55%) rotate(5deg) scale(1.1); }
 }
 
 /* Responsive adjustment */
