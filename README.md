@@ -6,4 +6,5 @@ A clean, Scandinavian-inspired personal page featuring an "About Me" section and
 
 **Snapshot**:
 
-<img width="1913" height="940" alt="image" src="https://github.com/user-attachments/assets/ce48d6f6-eff1-4ea6-9bbf-6a1523d4f879" />
+<img width="1397" height="841" alt="image" src="https://github.com/user-attachments/assets/480f9d2c-da0f-47e8-abd4-27fd2830a38d" />
+
